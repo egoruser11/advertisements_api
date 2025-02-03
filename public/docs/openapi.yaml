@@ -1,0 +1,1017 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/user:
+    get:
+      summary: ''
+      operationId: getApiUser
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/change/password/send/email:
+    post:
+      summary: ''
+      operationId: postApiChangePasswordSendEmail
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: rowland04@example.org
+                  nullable: false
+              required:
+                - email
+      security: []
+  /api/change/password:
+    post:
+      summary: ''
+      operationId: postApiChangePassword
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: vincent22@example.org
+                  nullable: false
+                secret_code:
+                  type: string
+                  description: 'Must be 25 characters.'
+                  example: yrhsgzwvpunkharwflvwetzpf
+                  nullable: false
+                password:
+                  type: string
+                  description: 'Must be at least 10 characters.'
+                  example: '`}Y3l)m|i7mt`?79'
+                  nullable: false
+                repeated_password:
+                  type: string
+                  description: 'The value and <code>password</code> must match.'
+                  example: nisi
+                  nullable: false
+              required:
+                - email
+                - secret_code
+                - password
+                - repeated_password
+      security: []
+  /api/change/password/resend/email:
+    post:
+      summary: ''
+      operationId: postApiChangePasswordResendEmail
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: bailey.ubaldo@example.com
+                  nullable: false
+              required:
+                - email
+      security: []
+  /api/register:
+    post:
+      summary: ''
+      operationId: postApiRegister
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: kaylah10@example.org
+                  nullable: false
+                name:
+                  type: string
+                  description: ''
+                  example: fugit
+                  nullable: false
+                surname:
+                  type: string
+                  description: ''
+                  example: sequi
+                  nullable: false
+                patronymic:
+                  type: string
+                  description: ''
+                  example: alias
+                  nullable: true
+                phone:
+                  type: string
+                  description: 'Must match the regex /^8\d{10}$/i.'
+                  example: 82000826650$/i
+                  nullable: false
+                post:
+                  type: string
+                  description: ''
+                  example: voluptatem
+                  nullable: false
+                tax_number:
+                  type: string
+                  description: ''
+                  example: nihil
+                  nullable: false
+                legal_entity:
+                  type: string
+                  description: ''
+                  example: amet
+                  nullable: true
+                address_docs:
+                  type: string
+                  description: ''
+                  example: voluptatem
+                  nullable: true
+              required:
+                - email
+                - name
+                - surname
+                - phone
+                - post
+      security: []
+  /api/verify/phone/code:
+    post:
+      summary: ''
+      operationId: postApiVerifyPhoneCode
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: hannah43@example.net
+                  nullable: false
+                code:
+                  type: string
+                  description: 'Must be 4 digits.'
+                  example: '2567'
+                  nullable: false
+              required:
+                - email
+                - code
+      security: []
+  /api/resend/on/num:
+    post:
+      summary: ''
+      operationId: postApiResendOnNum
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: qledner@example.org
+                  nullable: false
+              required:
+                - email
+      security: []
+  /api/continue/register:
+    post:
+      summary: ''
+      operationId: postApiContinueRegister
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: dale66@example.net
+                  nullable: false
+              required:
+                - email
+      security: []
+  /api/update:
+    post:
+      summary: ''
+      operationId: postApiUpdate
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: 'The <code>id</code> of an existing record in the users table.'
+                  example: 19
+                  nullable: false
+                tax_number:
+                  type: string
+                  description: ''
+                  example: sit
+                  nullable: false
+                legal_entity:
+                  type: string
+                  description: ''
+                  example: ab
+                  nullable: false
+                legal_address:
+                  type: string
+                  description: ''
+                  example: aut
+                  nullable: false
+                address_docs:
+                  type: string
+                  description: ''
+                  example: magnam
+                  nullable: false
+              required:
+                - id
+                - tax_number
+                - legal_entity
+                - legal_address
+                - address_docs
+      security: []
+  /api/advertisements:
+    get:
+      summary: ''
+      operationId: getApiAdvertisements
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  advertisements:
+                    -
+                      id: 54
+                      check_in_date: null
+                      departure_date: null
+                      beds_count: null
+                      rooms_count: '1'
+                      address: 'Московская область'
+                      rules_cancellation: null
+                      description: null
+                      created_at: '2024-12-10T16:10:17.000000Z'
+                      updated_at: '2024-12-10T16:13:49.000000Z'
+                      params:
+                        -
+                          id: 2
+                          name: wifi2
+                          key: wi_fi2
+                          description: NBfdnfnv2
+                          group: internet2
+                          created_at: null
+                          updated_at: null
+                          pivot:
+                            advertisement_id: 54
+                            param_id: 2
+                            value: 0
+                    -
+                      id: 53
+                      check_in_date: null
+                      departure_date: null
+                      beds_count: null
+                      rooms_count: '1'
+                      address: 'Московская область'
+                      rules_cancellation: null
+                      description: null
+                      created_at: '2024-12-09T13:59:40.000000Z'
+                      updated_at: '2024-12-09T14:24:33.000000Z'
+                      params:
+                        -
+                          id: 1
+                          name: wifi
+                          key: wi_fi
+                          description: NBfdnfnv
+                          group: internet
+                          created_at: null
+                          updated_at: null
+                          pivot:
+                            advertisement_id: 53
+                            param_id: 1
+                            value: 0
+                    -
+                      id: 52
+                      check_in_date: null
+                      departure_date: null
+                      beds_count: null
+                      rooms_count: '3'
+                      address: Казань
+                      rules_cancellation: null
+                      description: null
+                      created_at: '2024-12-09T13:34:27.000000Z'
+                      updated_at: '2024-12-09T13:34:27.000000Z'
+                      params: []
+                    -
+                      id: 51
+                      check_in_date: null
+                      departure_date: null
+                      beds_count: null
+                      rooms_count: '1'
+                      address: 'Московская область'
+                      rules_cancellation: null
+                      description: null
+                      created_at: '2024-12-09T13:33:54.000000Z'
+                      updated_at: '2024-12-09T14:08:59.000000Z'
+                      params: []
+                    -
+                      id: 50
+                      check_in_date: null
+                      departure_date: null
+                      beds_count: null
+                      rooms_count: '1'
+                      address: 'Московская область'
+                      rules_cancellation: null
+                      description: null
+                      created_at: '2024-12-09T13:33:28.000000Z'
+                      updated_at: '2024-12-09T14:12:57.000000Z'
+                      params: []
+                    -
+                      id: 49
+                      check_in_date: null
+                      departure_date: null
+                      beds_count: null
+                      rooms_count: '1'
+                      address: 'Московская область'
+                      rules_cancellation: null
+                      description: null
+                      created_at: '2024-12-09T13:32:52.000000Z'
+                      updated_at: '2024-12-09T14:13:44.000000Z'
+                      params: []
+                    -
+                      id: 48
+                      check_in_date: null
+                      departure_date: null
+                      beds_count: null
+                      rooms_count: '3'
+                      address: Казань
+                      rules_cancellation: null
+                      description: null
+                      created_at: '2024-12-09T13:32:45.000000Z'
+                      updated_at: '2024-12-09T13:32:45.000000Z'
+                      params:
+                        -
+                          id: 1
+                          name: wifi
+                          key: wi_fi
+                          description: NBfdnfnv
+                          group: internet
+                          created_at: null
+                          updated_at: null
+                          pivot:
+                            advertisement_id: 48
+                            param_id: 1
+                            value: 0
+                        -
+                          id: 2
+                          name: wifi2
+                          key: wi_fi2
+                          description: NBfdnfnv2
+                          group: internet2
+                          created_at: null
+                          updated_at: null
+                          pivot:
+                            advertisement_id: 48
+                            param_id: 2
+                            value: 1
+                    -
+                      id: 47
+                      check_in_date: null
+                      departure_date: null
+                      beds_count: null
+                      rooms_count: '3'
+                      address: Казань
+                      rules_cancellation: null
+                      description: null
+                      created_at: '2024-12-09T13:32:40.000000Z'
+                      updated_at: '2024-12-09T13:32:40.000000Z'
+                      params:
+                        -
+                          id: 1
+                          name: wifi
+                          key: wi_fi
+                          description: NBfdnfnv
+                          group: internet
+                          created_at: null
+                          updated_at: null
+                          pivot:
+                            advertisement_id: 47
+                            param_id: 1
+                            value: 0
+                        -
+                          id: 2
+                          name: wifi2
+                          key: wi_fi2
+                          description: NBfdnfnv2
+                          group: internet2
+                          created_at: null
+                          updated_at: null
+                          pivot:
+                            advertisement_id: 47
+                            param_id: 2
+                            value: 1
+                    -
+                      id: 46
+                      check_in_date: null
+                      departure_date: null
+                      beds_count: null
+                      rooms_count: '3'
+                      address: Казань
+                      rules_cancellation: null
+                      description: null
+                      created_at: '2024-12-09T13:29:21.000000Z'
+                      updated_at: '2024-12-09T13:29:21.000000Z'
+                      params:
+                        -
+                          id: 1
+                          name: wifi
+                          key: wi_fi
+                          description: NBfdnfnv
+                          group: internet
+                          created_at: null
+                          updated_at: null
+                          pivot:
+                            advertisement_id: 46
+                            param_id: 1
+                            value: 0
+                        -
+                          id: 2
+                          name: wifi2
+                          key: wi_fi2
+                          description: NBfdnfnv2
+                          group: internet2
+                          created_at: null
+                          updated_at: null
+                          pivot:
+                            advertisement_id: 46
+                            param_id: 2
+                            value: 1
+                    -
+                      id: 45
+                      check_in_date: null
+                      departure_date: null
+                      beds_count: null
+                      rooms_count: '3'
+                      address: Казань
+                      rules_cancellation: null
+                      description: null
+                      created_at: '2024-12-09T13:28:58.000000Z'
+                      updated_at: '2024-12-09T13:28:58.000000Z'
+                      params:
+                        -
+                          id: 1
+                          name: wifi
+                          key: wi_fi
+                          description: NBfdnfnv
+                          group: internet
+                          created_at: null
+                          updated_at: null
+                          pivot:
+                            advertisement_id: 45
+                            param_id: 1
+                            value: 1
+                        -
+                          id: 2
+                          name: wifi2
+                          key: wi_fi2
+                          description: NBfdnfnv2
+                          group: internet2
+                          created_at: null
+                          updated_at: null
+                          pivot:
+                            advertisement_id: 45
+                            param_id: 2
+                            value: 0
+                  success: true
+                properties:
+                  advertisements:
+                    type: array
+                    example:
+                      -
+                        id: 54
+                        check_in_date: null
+                        departure_date: null
+                        beds_count: null
+                        rooms_count: '1'
+                        address: 'Московская область'
+                        rules_cancellation: null
+                        description: null
+                        created_at: '2024-12-10T16:10:17.000000Z'
+                        updated_at: '2024-12-10T16:13:49.000000Z'
+                        params:
+                          -
+                            id: 2
+                            name: wifi2
+                            key: wi_fi2
+                            description: NBfdnfnv2
+                            group: internet2
+                            created_at: null
+                            updated_at: null
+                            pivot:
+                              advertisement_id: 54
+                              param_id: 2
+                              value: 0
+                      -
+                        id: 53
+                        check_in_date: null
+                        departure_date: null
+                        beds_count: null
+                        rooms_count: '1'
+                        address: 'Московская область'
+                        rules_cancellation: null
+                        description: null
+                        created_at: '2024-12-09T13:59:40.000000Z'
+                        updated_at: '2024-12-09T14:24:33.000000Z'
+                        params:
+                          -
+                            id: 1
+                            name: wifi
+                            key: wi_fi
+                            description: NBfdnfnv
+                            group: internet
+                            created_at: null
+                            updated_at: null
+                            pivot:
+                              advertisement_id: 53
+                              param_id: 1
+                              value: 0
+                      -
+                        id: 52
+                        check_in_date: null
+                        departure_date: null
+                        beds_count: null
+                        rooms_count: '3'
+                        address: Казань
+                        rules_cancellation: null
+                        description: null
+                        created_at: '2024-12-09T13:34:27.000000Z'
+                        updated_at: '2024-12-09T13:34:27.000000Z'
+                        params: []
+                      -
+                        id: 51
+                        check_in_date: null
+                        departure_date: null
+                        beds_count: null
+                        rooms_count: '1'
+                        address: 'Московская область'
+                        rules_cancellation: null
+                        description: null
+                        created_at: '2024-12-09T13:33:54.000000Z'
+                        updated_at: '2024-12-09T14:08:59.000000Z'
+                        params: []
+                      -
+                        id: 50
+                        check_in_date: null
+                        departure_date: null
+                        beds_count: null
+                        rooms_count: '1'
+                        address: 'Московская область'
+                        rules_cancellation: null
+                        description: null
+                        created_at: '2024-12-09T13:33:28.000000Z'
+                        updated_at: '2024-12-09T14:12:57.000000Z'
+                        params: []
+                      -
+                        id: 49
+                        check_in_date: null
+                        departure_date: null
+                        beds_count: null
+                        rooms_count: '1'
+                        address: 'Московская область'
+                        rules_cancellation: null
+                        description: null
+                        created_at: '2024-12-09T13:32:52.000000Z'
+                        updated_at: '2024-12-09T14:13:44.000000Z'
+                        params: []
+                      -
+                        id: 48
+                        check_in_date: null
+                        departure_date: null
+                        beds_count: null
+                        rooms_count: '3'
+                        address: Казань
+                        rules_cancellation: null
+                        description: null
+                        created_at: '2024-12-09T13:32:45.000000Z'
+                        updated_at: '2024-12-09T13:32:45.000000Z'
+                        params:
+                          -
+                            id: 1
+                            name: wifi
+                            key: wi_fi
+                            description: NBfdnfnv
+                            group: internet
+                            created_at: null
+                            updated_at: null
+                            pivot:
+                              advertisement_id: 48
+                              param_id: 1
+                              value: 0
+                          -
+                            id: 2
+                            name: wifi2
+                            key: wi_fi2
+                            description: NBfdnfnv2
+                            group: internet2
+                            created_at: null
+                            updated_at: null
+                            pivot:
+                              advertisement_id: 48
+                              param_id: 2
+                              value: 1
+                      -
+                        id: 47
+                        check_in_date: null
+                        departure_date: null
+                        beds_count: null
+                        rooms_count: '3'
+                        address: Казань
+                        rules_cancellation: null
+                        description: null
+                        created_at: '2024-12-09T13:32:40.000000Z'
+                        updated_at: '2024-12-09T13:32:40.000000Z'
+                        params:
+                          -
+                            id: 1
+                            name: wifi
+                            key: wi_fi
+                            description: NBfdnfnv
+                            group: internet
+                            created_at: null
+                            updated_at: null
+                            pivot:
+                              advertisement_id: 47
+                              param_id: 1
+                              value: 0
+                          -
+                            id: 2
+                            name: wifi2
+                            key: wi_fi2
+                            description: NBfdnfnv2
+                            group: internet2
+                            created_at: null
+                            updated_at: null
+                            pivot:
+                              advertisement_id: 47
+                              param_id: 2
+                              value: 1
+                      -
+                        id: 46
+                        check_in_date: null
+                        departure_date: null
+                        beds_count: null
+                        rooms_count: '3'
+                        address: Казань
+                        rules_cancellation: null
+                        description: null
+                        created_at: '2024-12-09T13:29:21.000000Z'
+                        updated_at: '2024-12-09T13:29:21.000000Z'
+                        params:
+                          -
+                            id: 1
+                            name: wifi
+                            key: wi_fi
+                            description: NBfdnfnv
+                            group: internet
+                            created_at: null
+                            updated_at: null
+                            pivot:
+                              advertisement_id: 46
+                              param_id: 1
+                              value: 0
+                          -
+                            id: 2
+                            name: wifi2
+                            key: wi_fi2
+                            description: NBfdnfnv2
+                            group: internet2
+                            created_at: null
+                            updated_at: null
+                            pivot:
+                              advertisement_id: 46
+                              param_id: 2
+                              value: 1
+                      -
+                        id: 45
+                        check_in_date: null
+                        departure_date: null
+                        beds_count: null
+                        rooms_count: '3'
+                        address: Казань
+                        rules_cancellation: null
+                        description: null
+                        created_at: '2024-12-09T13:28:58.000000Z'
+                        updated_at: '2024-12-09T13:28:58.000000Z'
+                        params:
+                          -
+                            id: 1
+                            name: wifi
+                            key: wi_fi
+                            description: NBfdnfnv
+                            group: internet
+                            created_at: null
+                            updated_at: null
+                            pivot:
+                              advertisement_id: 45
+                              param_id: 1
+                              value: 1
+                          -
+                            id: 2
+                            name: wifi2
+                            key: wi_fi2
+                            description: NBfdnfnv2
+                            group: internet2
+                            created_at: null
+                            updated_at: null
+                            pivot:
+                              advertisement_id: 45
+                              param_id: 2
+                              value: 0
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 54
+                        check_in_date:
+                          type: string
+                          example: null
+                        departure_date:
+                          type: string
+                          example: null
+                        beds_count:
+                          type: string
+                          example: null
+                        rooms_count:
+                          type: string
+                          example: '1'
+                        address:
+                          type: string
+                          example: 'Московская область'
+                        rules_cancellation:
+                          type: string
+                          example: null
+                        description:
+                          type: string
+                          example: null
+                        created_at:
+                          type: string
+                          example: '2024-12-10T16:10:17.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2024-12-10T16:13:49.000000Z'
+                        params:
+                          type: array
+                          example:
+                            -
+                              id: 2
+                              name: wifi2
+                              key: wi_fi2
+                              description: NBfdnfnv2
+                              group: internet2
+                              created_at: null
+                              updated_at: null
+                              pivot:
+                                advertisement_id: 54
+                                param_id: 2
+                                value: 0
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 2
+                              name:
+                                type: string
+                                example: wifi2
+                              key:
+                                type: string
+                                example: wi_fi2
+                              description:
+                                type: string
+                                example: NBfdnfnv2
+                              group:
+                                type: string
+                                example: internet2
+                              created_at:
+                                type: string
+                                example: null
+                              updated_at:
+                                type: string
+                                example: null
+                              pivot:
+                                type: object
+                                properties:
+                                  advertisement_id:
+                                    type: integer
+                                    example: 54
+                                  param_id:
+                                    type: integer
+                                    example: 2
+                                  value:
+                                    type: integer
+                                    example: 0
+                  success:
+                    type: boolean
+                    example: true
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiAdvertisements
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/advertisements/update:
+    post:
+      summary: ''
+      operationId: postApiAdvertisementsUpdate
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/advertisement:
+    get:
+      summary: ''
+      operationId: getApiAdvertisement
+      description: ''
+      parameters: []
+      responses:
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'No query results for model [App\Models\Advertisement].'
+                properties:
+                  message:
+                    type: string
+                    example: 'No query results for model [App\Models\Advertisement].'
+      tags:
+        - Endpoints
+      security: []
+  /api/booking:
+    post:
+      summary: ''
+      operationId: postApiBooking
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/login:
+    post:
+      summary: Логин
+      operationId: ''
+      description: 'Пользователь не должен быть заблокированным'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  -
+                    description: ''
+                    type: object
+                    example:
+                      success: true
+                    properties:
+                      success:
+                        type: boolean
+                        example: true
+                  -
+                    description: ''
+                    type: object
+                    example:
+                      success: false
+                    properties:
+                      success:
+                        type: boolean
+                        example: false
+      tags:
+        - Пользователь
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: Тест
+                  example: null
+                  nullable: false
+                password:
+                  type: string
+                  description: 'Must be at least 10 characters.'
+                  example: '3G,:Cs!'
+                  nullable: false
+              required:
+                - email
+                - password
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
+  -
+    name: Пользователь
+    description: ''

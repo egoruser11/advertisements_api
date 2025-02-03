@@ -1,0 +1,570 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "97d8c3da-5a37-4894-b3bf-3234022a2675",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/change\/password\/send\/email",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/change\/password\/send\/email",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/change\/password\/send\/email"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"rowland04@example.org\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/change\/password",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/change\/password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/change\/password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"vincent22@example.org\",\"secret_code\":\"yrhsgzwvpunkharwflvwetzpf\",\"password\":\"`}Y3l)m|i7mt`?79\",\"repeated_password\":\"nisi\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/change\/password\/resend\/email",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/change\/password\/resend\/email",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/change\/password\/resend\/email"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"bailey.ubaldo@example.com\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/register",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"kaylah10@example.org\",\"name\":\"fugit\",\"surname\":\"sequi\",\"patronymic\":\"alias\",\"phone\":\"82000826650$\\\/i\",\"post\":\"voluptatem\",\"tax_number\":\"nihil\",\"legal_entity\":\"amet\",\"address_docs\":\"voluptatem\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/verify\/phone\/code",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/verify\/phone\/code",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/verify\/phone\/code"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"hannah43@example.net\",\"code\":\"2567\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/resend\/on\/num",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/resend\/on\/num",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/resend\/on\/num"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"qledner@example.org\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/continue\/register",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/continue\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/continue\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"dale66@example.net\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/update",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"id\":19,\"tax_number\":\"sit\",\"legal_entity\":\"ab\",\"legal_address\":\"aut\",\"address_docs\":\"magnam\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/advertisements",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/advertisements",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/advertisements"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"advertisements\":[{\"id\":54,\"check_in_date\":null,\"departure_date\":null,\"beds_count\":null,\"rooms_count\":\"1\",\"address\":\"\\u041c\\u043e\\u0441\\u043a\\u043e\\u0432\\u0441\\u043a\\u0430\\u044f \\u043e\\u0431\\u043b\\u0430\\u0441\\u0442\\u044c\",\"rules_cancellation\":null,\"description\":null,\"created_at\":\"2024-12-10T16:10:17.000000Z\",\"updated_at\":\"2024-12-10T16:13:49.000000Z\",\"params\":[{\"id\":2,\"name\":\"wifi2\",\"key\":\"wi_fi2\",\"description\":\"NBfdnfnv2\",\"group\":\"internet2\",\"created_at\":null,\"updated_at\":null,\"pivot\":{\"advertisement_id\":54,\"param_id\":2,\"value\":0}}]},{\"id\":53,\"check_in_date\":null,\"departure_date\":null,\"beds_count\":null,\"rooms_count\":\"1\",\"address\":\"\\u041c\\u043e\\u0441\\u043a\\u043e\\u0432\\u0441\\u043a\\u0430\\u044f \\u043e\\u0431\\u043b\\u0430\\u0441\\u0442\\u044c\",\"rules_cancellation\":null,\"description\":null,\"created_at\":\"2024-12-09T13:59:40.000000Z\",\"updated_at\":\"2024-12-09T14:24:33.000000Z\",\"params\":[{\"id\":1,\"name\":\"wifi\",\"key\":\"wi_fi\",\"description\":\"NBfdnfnv\",\"group\":\"internet\",\"created_at\":null,\"updated_at\":null,\"pivot\":{\"advertisement_id\":53,\"param_id\":1,\"value\":0}}]},{\"id\":52,\"check_in_date\":null,\"departure_date\":null,\"beds_count\":null,\"rooms_count\":\"3\",\"address\":\"\\u041a\\u0430\\u0437\\u0430\\u043d\\u044c\",\"rules_cancellation\":null,\"description\":null,\"created_at\":\"2024-12-09T13:34:27.000000Z\",\"updated_at\":\"2024-12-09T13:34:27.000000Z\",\"params\":[]},{\"id\":51,\"check_in_date\":null,\"departure_date\":null,\"beds_count\":null,\"rooms_count\":\"1\",\"address\":\"\\u041c\\u043e\\u0441\\u043a\\u043e\\u0432\\u0441\\u043a\\u0430\\u044f \\u043e\\u0431\\u043b\\u0430\\u0441\\u0442\\u044c\",\"rules_cancellation\":null,\"description\":null,\"created_at\":\"2024-12-09T13:33:54.000000Z\",\"updated_at\":\"2024-12-09T14:08:59.000000Z\",\"params\":[]},{\"id\":50,\"check_in_date\":null,\"departure_date\":null,\"beds_count\":null,\"rooms_count\":\"1\",\"address\":\"\\u041c\\u043e\\u0441\\u043a\\u043e\\u0432\\u0441\\u043a\\u0430\\u044f \\u043e\\u0431\\u043b\\u0430\\u0441\\u0442\\u044c\",\"rules_cancellation\":null,\"description\":null,\"created_at\":\"2024-12-09T13:33:28.000000Z\",\"updated_at\":\"2024-12-09T14:12:57.000000Z\",\"params\":[]},{\"id\":49,\"check_in_date\":null,\"departure_date\":null,\"beds_count\":null,\"rooms_count\":\"1\",\"address\":\"\\u041c\\u043e\\u0441\\u043a\\u043e\\u0432\\u0441\\u043a\\u0430\\u044f \\u043e\\u0431\\u043b\\u0430\\u0441\\u0442\\u044c\",\"rules_cancellation\":null,\"description\":null,\"created_at\":\"2024-12-09T13:32:52.000000Z\",\"updated_at\":\"2024-12-09T14:13:44.000000Z\",\"params\":[]},{\"id\":48,\"check_in_date\":null,\"departure_date\":null,\"beds_count\":null,\"rooms_count\":\"3\",\"address\":\"\\u041a\\u0430\\u0437\\u0430\\u043d\\u044c\",\"rules_cancellation\":null,\"description\":null,\"created_at\":\"2024-12-09T13:32:45.000000Z\",\"updated_at\":\"2024-12-09T13:32:45.000000Z\",\"params\":[{\"id\":1,\"name\":\"wifi\",\"key\":\"wi_fi\",\"description\":\"NBfdnfnv\",\"group\":\"internet\",\"created_at\":null,\"updated_at\":null,\"pivot\":{\"advertisement_id\":48,\"param_id\":1,\"value\":0}},{\"id\":2,\"name\":\"wifi2\",\"key\":\"wi_fi2\",\"description\":\"NBfdnfnv2\",\"group\":\"internet2\",\"created_at\":null,\"updated_at\":null,\"pivot\":{\"advertisement_id\":48,\"param_id\":2,\"value\":1}}]},{\"id\":47,\"check_in_date\":null,\"departure_date\":null,\"beds_count\":null,\"rooms_count\":\"3\",\"address\":\"\\u041a\\u0430\\u0437\\u0430\\u043d\\u044c\",\"rules_cancellation\":null,\"description\":null,\"created_at\":\"2024-12-09T13:32:40.000000Z\",\"updated_at\":\"2024-12-09T13:32:40.000000Z\",\"params\":[{\"id\":1,\"name\":\"wifi\",\"key\":\"wi_fi\",\"description\":\"NBfdnfnv\",\"group\":\"internet\",\"created_at\":null,\"updated_at\":null,\"pivot\":{\"advertisement_id\":47,\"param_id\":1,\"value\":0}},{\"id\":2,\"name\":\"wifi2\",\"key\":\"wi_fi2\",\"description\":\"NBfdnfnv2\",\"group\":\"internet2\",\"created_at\":null,\"updated_at\":null,\"pivot\":{\"advertisement_id\":47,\"param_id\":2,\"value\":1}}]},{\"id\":46,\"check_in_date\":null,\"departure_date\":null,\"beds_count\":null,\"rooms_count\":\"3\",\"address\":\"\\u041a\\u0430\\u0437\\u0430\\u043d\\u044c\",\"rules_cancellation\":null,\"description\":null,\"created_at\":\"2024-12-09T13:29:21.000000Z\",\"updated_at\":\"2024-12-09T13:29:21.000000Z\",\"params\":[{\"id\":1,\"name\":\"wifi\",\"key\":\"wi_fi\",\"description\":\"NBfdnfnv\",\"group\":\"internet\",\"created_at\":null,\"updated_at\":null,\"pivot\":{\"advertisement_id\":46,\"param_id\":1,\"value\":0}},{\"id\":2,\"name\":\"wifi2\",\"key\":\"wi_fi2\",\"description\":\"NBfdnfnv2\",\"group\":\"internet2\",\"created_at\":null,\"updated_at\":null,\"pivot\":{\"advertisement_id\":46,\"param_id\":2,\"value\":1}}]},{\"id\":45,\"check_in_date\":null,\"departure_date\":null,\"beds_count\":null,\"rooms_count\":\"3\",\"address\":\"\\u041a\\u0430\\u0437\\u0430\\u043d\\u044c\",\"rules_cancellation\":null,\"description\":null,\"created_at\":\"2024-12-09T13:28:58.000000Z\",\"updated_at\":\"2024-12-09T13:28:58.000000Z\",\"params\":[{\"id\":1,\"name\":\"wifi\",\"key\":\"wi_fi\",\"description\":\"NBfdnfnv\",\"group\":\"internet\",\"created_at\":null,\"updated_at\":null,\"pivot\":{\"advertisement_id\":45,\"param_id\":1,\"value\":1}},{\"id\":2,\"name\":\"wifi2\",\"key\":\"wi_fi2\",\"description\":\"NBfdnfnv2\",\"group\":\"internet2\",\"created_at\":null,\"updated_at\":null,\"pivot\":{\"advertisement_id\":45,\"param_id\":2,\"value\":0}}]}],\"success\":true}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/advertisements",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/advertisements",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/advertisements"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/advertisements\/update",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/advertisements\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/advertisements\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/advertisement",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/advertisement",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/advertisement"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "58"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\Advertisement].\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/booking",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/booking",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/booking"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c",
+            "description": "",
+            "item": [
+                {
+                    "name": "\u041b\u043e\u0433\u0438\u043d",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":null,\"password\":\"3G,:Cs!\"}"
+                        },
+                        "description": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u043d\u0435 \u0434\u043e\u043b\u0436\u0435\u043d \u0431\u044b\u0442\u044c \u0437\u0430\u0431\u043b\u043e\u043a\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u043c",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"success\": true\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"success\" : false\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

@@ -1,0 +1,1826 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Laravel Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+            </style>
+
+
+    <script src="../docs/js/theme-default-4.38.0.js"></script>
+
+</head>
+
+<body data-languages="[]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image"/>
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                    <ul id="tocify-header-introduction" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="introduction">
+                    <a href="#introduction">Introduction</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-authenticating-requests" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authenticating-requests">
+                    <a href="#authenticating-requests">Authenticating requests</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-endpoints" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
+                                <a href="#endpoints-GETapi-user">GET api/user</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-change-password-send-email">
+                                <a href="#endpoints-POSTapi-change-password-send-email">POST api/change/password/send/email</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-change-password">
+                                <a href="#endpoints-POSTapi-change-password">POST api/change/password</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-change-password-resend-email">
+                                <a href="#endpoints-POSTapi-change-password-resend-email">POST api/change/password/resend/email</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-register">
+                                <a href="#endpoints-POSTapi-register">POST api/register</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-verify-phone-code">
+                                <a href="#endpoints-POSTapi-verify-phone-code">POST api/verify/phone/code</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-resend-on-num">
+                                <a href="#endpoints-POSTapi-resend-on-num">POST api/resend/on/num</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-continue-register">
+                                <a href="#endpoints-POSTapi-continue-register">POST api/continue/register</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-update">
+                                <a href="#endpoints-POSTapi-update">POST api/update</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-advertisements">
+                                <a href="#endpoints-GETapi-advertisements">GET api/advertisements</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-advertisements">
+                                <a href="#endpoints-POSTapi-advertisements">POST api/advertisements</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-advertisements-update">
+                                <a href="#endpoints-POSTapi-advertisements-update">POST api/advertisements/update</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-advertisement">
+                                <a href="#endpoints-GETapi-advertisement">GET api/advertisement</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-booking">
+                                <a href="#endpoints-POSTapi-booking">POST api/booking</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-polzovatel" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="polzovatel">
+                    <a href="#polzovatel">Пользователь</a>
+                </li>
+                                    <ul id="tocify-subheader-polzovatel" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="polzovatel-POSTapi-login">
+                                <a href="#polzovatel-POSTapi-login">Логин</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+            </div>
+
+    <ul class="toc-footer" id="toc-footer">
+                    <li style="padding-bottom: 5px;"><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li style="padding-bottom: 5px;"><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+    </ul>
+
+    <ul class="toc-footer" id="last-updated">
+        <li>Last updated: December 10, 2024</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<aside>
+    <strong>Base URL</strong>: <code>http://localhost</code>
+</aside>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+                                <h2 id="endpoints-GETapi-user">GET api/user</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-user">
+<blockquote>Example request:</blockquote>
+
+</span>
+
+<span id="example-responses-GETapi-user">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-user" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-user" data-method="GET"
+      data-path="api/user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-user"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-user"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-POSTapi-change-password-send-email">POST api/change/password/send/email</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-change-password-send-email">
+<blockquote>Example request:</blockquote>
+
+</span>
+
+<span id="example-responses-POSTapi-change-password-send-email">
+</span>
+<span id="execution-results-POSTapi-change-password-send-email" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-change-password-send-email"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-change-password-send-email"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-change-password-send-email" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-change-password-send-email">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-change-password-send-email" data-method="POST"
+      data-path="api/change/password/send/email"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-change-password-send-email', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/change/password/send/email</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-change-password-send-email"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-change-password-send-email"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-change-password-send-email"
+               value="rowland04@example.org"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Example: <code>rowland04@example.org</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-change-password">POST api/change/password</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-change-password">
+<blockquote>Example request:</blockquote>
+
+</span>
+
+<span id="example-responses-POSTapi-change-password">
+</span>
+<span id="execution-results-POSTapi-change-password" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-change-password"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-change-password"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-change-password" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-change-password">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-change-password" data-method="POST"
+      data-path="api/change/password"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-change-password', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/change/password</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-change-password"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-change-password"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-change-password"
+               value="vincent22@example.org"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Example: <code>vincent22@example.org</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>secret_code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="secret_code"                data-endpoint="POSTapi-change-password"
+               value="yrhsgzwvpunkharwflvwetzpf"
+               data-component="body">
+    <br>
+<p>Must be 25 characters. Example: <code>yrhsgzwvpunkharwflvwetzpf</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="POSTapi-change-password"
+               value="`}Y3l)m|i7mt`?79"
+               data-component="body">
+    <br>
+<p>Must be at least 10 characters. Example: <code>`}Y3l)m|i7mt</code>?79`</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>repeated_password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="repeated_password"                data-endpoint="POSTapi-change-password"
+               value="nisi"
+               data-component="body">
+    <br>
+<p>The value and <code>password</code> must match. Example: <code>nisi</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-change-password-resend-email">POST api/change/password/resend/email</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-change-password-resend-email">
+<blockquote>Example request:</blockquote>
+
+</span>
+
+<span id="example-responses-POSTapi-change-password-resend-email">
+</span>
+<span id="execution-results-POSTapi-change-password-resend-email" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-change-password-resend-email"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-change-password-resend-email"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-change-password-resend-email" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-change-password-resend-email">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-change-password-resend-email" data-method="POST"
+      data-path="api/change/password/resend/email"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-change-password-resend-email', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/change/password/resend/email</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-change-password-resend-email"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-change-password-resend-email"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-change-password-resend-email"
+               value="bailey.ubaldo@example.com"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Example: <code>bailey.ubaldo@example.com</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-register">POST api/register</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-register">
+<blockquote>Example request:</blockquote>
+
+</span>
+
+<span id="example-responses-POSTapi-register">
+</span>
+<span id="execution-results-POSTapi-register" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-register"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-register"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-register">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-register" data-method="POST"
+      data-path="api/register"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-register', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/register</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-register"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-register"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-register"
+               value="kaylah10@example.org"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Example: <code>kaylah10@example.org</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="POSTapi-register"
+               value="fugit"
+               data-component="body">
+    <br>
+<p>Example: <code>fugit</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>surname</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="surname"                data-endpoint="POSTapi-register"
+               value="sequi"
+               data-component="body">
+    <br>
+<p>Example: <code>sequi</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>patronymic</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="patronymic"                data-endpoint="POSTapi-register"
+               value="alias"
+               data-component="body">
+    <br>
+<p>Example: <code>alias</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="phone"                data-endpoint="POSTapi-register"
+               value="82000826650$/i"
+               data-component="body">
+    <br>
+<p>Must match the regex /^8\d{10}$/i. Example: <code>82000826650$/i</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>post</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="post"                data-endpoint="POSTapi-register"
+               value="voluptatem"
+               data-component="body">
+    <br>
+<p>Example: <code>voluptatem</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>tax_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="tax_number"                data-endpoint="POSTapi-register"
+               value="nihil"
+               data-component="body">
+    <br>
+<p>Example: <code>nihil</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>legal_entity</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="legal_entity"                data-endpoint="POSTapi-register"
+               value="amet"
+               data-component="body">
+    <br>
+<p>Example: <code>amet</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>address_docs</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="address_docs"                data-endpoint="POSTapi-register"
+               value="voluptatem"
+               data-component="body">
+    <br>
+<p>Example: <code>voluptatem</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-verify-phone-code">POST api/verify/phone/code</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-verify-phone-code">
+<blockquote>Example request:</blockquote>
+
+</span>
+
+<span id="example-responses-POSTapi-verify-phone-code">
+</span>
+<span id="execution-results-POSTapi-verify-phone-code" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-verify-phone-code"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-verify-phone-code"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-verify-phone-code" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-verify-phone-code">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-verify-phone-code" data-method="POST"
+      data-path="api/verify/phone/code"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-verify-phone-code', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/verify/phone/code</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-verify-phone-code"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-verify-phone-code"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-verify-phone-code"
+               value="hannah43@example.net"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Example: <code>hannah43@example.net</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="code"                data-endpoint="POSTapi-verify-phone-code"
+               value="2567"
+               data-component="body">
+    <br>
+<p>Must be 4 digits. Example: <code>2567</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-resend-on-num">POST api/resend/on/num</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-resend-on-num">
+<blockquote>Example request:</blockquote>
+
+</span>
+
+<span id="example-responses-POSTapi-resend-on-num">
+</span>
+<span id="execution-results-POSTapi-resend-on-num" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-resend-on-num"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-resend-on-num"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-resend-on-num" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-resend-on-num">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-resend-on-num" data-method="POST"
+      data-path="api/resend/on/num"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-resend-on-num', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/resend/on/num</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-resend-on-num"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-resend-on-num"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-resend-on-num"
+               value="qledner@example.org"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Example: <code>qledner@example.org</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-continue-register">POST api/continue/register</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-continue-register">
+<blockquote>Example request:</blockquote>
+
+</span>
+
+<span id="example-responses-POSTapi-continue-register">
+</span>
+<span id="execution-results-POSTapi-continue-register" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-continue-register"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-continue-register"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-continue-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-continue-register">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-continue-register" data-method="POST"
+      data-path="api/continue/register"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-continue-register', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/continue/register</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-continue-register"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-continue-register"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-continue-register"
+               value="dale66@example.net"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Example: <code>dale66@example.net</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-update">POST api/update</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-update">
+<blockquote>Example request:</blockquote>
+
+</span>
+
+<span id="example-responses-POSTapi-update">
+</span>
+<span id="execution-results-POSTapi-update" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-update"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-update"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-update" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-update">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-update" data-method="POST"
+      data-path="api/update"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-update', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/update</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-update"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-update"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="POSTapi-update"
+               value="19"
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the users table. Example: <code>19</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>tax_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="tax_number"                data-endpoint="POSTapi-update"
+               value="sit"
+               data-component="body">
+    <br>
+<p>Example: <code>sit</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>legal_entity</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="legal_entity"                data-endpoint="POSTapi-update"
+               value="ab"
+               data-component="body">
+    <br>
+<p>Example: <code>ab</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>legal_address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="legal_address"                data-endpoint="POSTapi-update"
+               value="aut"
+               data-component="body">
+    <br>
+<p>Example: <code>aut</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>address_docs</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="address_docs"                data-endpoint="POSTapi-update"
+               value="magnam"
+               data-component="body">
+    <br>
+<p>Example: <code>magnam</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-GETapi-advertisements">GET api/advertisements</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-advertisements">
+<blockquote>Example request:</blockquote>
+
+</span>
+
+<span id="example-responses-GETapi-advertisements">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 59
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;advertisements&quot;: [
+        {
+            &quot;id&quot;: 54,
+            &quot;check_in_date&quot;: null,
+            &quot;departure_date&quot;: null,
+            &quot;beds_count&quot;: null,
+            &quot;rooms_count&quot;: &quot;1&quot;,
+            &quot;address&quot;: &quot;Московская область&quot;,
+            &quot;rules_cancellation&quot;: null,
+            &quot;description&quot;: null,
+            &quot;created_at&quot;: &quot;2024-12-10T16:10:17.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-12-10T16:13:49.000000Z&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;id&quot;: 2,
+                    &quot;name&quot;: &quot;wifi2&quot;,
+                    &quot;key&quot;: &quot;wi_fi2&quot;,
+                    &quot;description&quot;: &quot;NBfdnfnv2&quot;,
+                    &quot;group&quot;: &quot;internet2&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null,
+                    &quot;pivot&quot;: {
+                        &quot;advertisement_id&quot;: 54,
+                        &quot;param_id&quot;: 2,
+                        &quot;value&quot;: 0
+                    }
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 53,
+            &quot;check_in_date&quot;: null,
+            &quot;departure_date&quot;: null,
+            &quot;beds_count&quot;: null,
+            &quot;rooms_count&quot;: &quot;1&quot;,
+            &quot;address&quot;: &quot;Московская область&quot;,
+            &quot;rules_cancellation&quot;: null,
+            &quot;description&quot;: null,
+            &quot;created_at&quot;: &quot;2024-12-09T13:59:40.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-12-09T14:24:33.000000Z&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;wifi&quot;,
+                    &quot;key&quot;: &quot;wi_fi&quot;,
+                    &quot;description&quot;: &quot;NBfdnfnv&quot;,
+                    &quot;group&quot;: &quot;internet&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null,
+                    &quot;pivot&quot;: {
+                        &quot;advertisement_id&quot;: 53,
+                        &quot;param_id&quot;: 1,
+                        &quot;value&quot;: 0
+                    }
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 52,
+            &quot;check_in_date&quot;: null,
+            &quot;departure_date&quot;: null,
+            &quot;beds_count&quot;: null,
+            &quot;rooms_count&quot;: &quot;3&quot;,
+            &quot;address&quot;: &quot;Казань&quot;,
+            &quot;rules_cancellation&quot;: null,
+            &quot;description&quot;: null,
+            &quot;created_at&quot;: &quot;2024-12-09T13:34:27.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-12-09T13:34:27.000000Z&quot;,
+            &quot;params&quot;: []
+        },
+        {
+            &quot;id&quot;: 51,
+            &quot;check_in_date&quot;: null,
+            &quot;departure_date&quot;: null,
+            &quot;beds_count&quot;: null,
+            &quot;rooms_count&quot;: &quot;1&quot;,
+            &quot;address&quot;: &quot;Московская область&quot;,
+            &quot;rules_cancellation&quot;: null,
+            &quot;description&quot;: null,
+            &quot;created_at&quot;: &quot;2024-12-09T13:33:54.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-12-09T14:08:59.000000Z&quot;,
+            &quot;params&quot;: []
+        },
+        {
+            &quot;id&quot;: 50,
+            &quot;check_in_date&quot;: null,
+            &quot;departure_date&quot;: null,
+            &quot;beds_count&quot;: null,
+            &quot;rooms_count&quot;: &quot;1&quot;,
+            &quot;address&quot;: &quot;Московская область&quot;,
+            &quot;rules_cancellation&quot;: null,
+            &quot;description&quot;: null,
+            &quot;created_at&quot;: &quot;2024-12-09T13:33:28.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-12-09T14:12:57.000000Z&quot;,
+            &quot;params&quot;: []
+        },
+        {
+            &quot;id&quot;: 49,
+            &quot;check_in_date&quot;: null,
+            &quot;departure_date&quot;: null,
+            &quot;beds_count&quot;: null,
+            &quot;rooms_count&quot;: &quot;1&quot;,
+            &quot;address&quot;: &quot;Московская область&quot;,
+            &quot;rules_cancellation&quot;: null,
+            &quot;description&quot;: null,
+            &quot;created_at&quot;: &quot;2024-12-09T13:32:52.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-12-09T14:13:44.000000Z&quot;,
+            &quot;params&quot;: []
+        },
+        {
+            &quot;id&quot;: 48,
+            &quot;check_in_date&quot;: null,
+            &quot;departure_date&quot;: null,
+            &quot;beds_count&quot;: null,
+            &quot;rooms_count&quot;: &quot;3&quot;,
+            &quot;address&quot;: &quot;Казань&quot;,
+            &quot;rules_cancellation&quot;: null,
+            &quot;description&quot;: null,
+            &quot;created_at&quot;: &quot;2024-12-09T13:32:45.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-12-09T13:32:45.000000Z&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;wifi&quot;,
+                    &quot;key&quot;: &quot;wi_fi&quot;,
+                    &quot;description&quot;: &quot;NBfdnfnv&quot;,
+                    &quot;group&quot;: &quot;internet&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null,
+                    &quot;pivot&quot;: {
+                        &quot;advertisement_id&quot;: 48,
+                        &quot;param_id&quot;: 1,
+                        &quot;value&quot;: 0
+                    }
+                },
+                {
+                    &quot;id&quot;: 2,
+                    &quot;name&quot;: &quot;wifi2&quot;,
+                    &quot;key&quot;: &quot;wi_fi2&quot;,
+                    &quot;description&quot;: &quot;NBfdnfnv2&quot;,
+                    &quot;group&quot;: &quot;internet2&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null,
+                    &quot;pivot&quot;: {
+                        &quot;advertisement_id&quot;: 48,
+                        &quot;param_id&quot;: 2,
+                        &quot;value&quot;: 1
+                    }
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 47,
+            &quot;check_in_date&quot;: null,
+            &quot;departure_date&quot;: null,
+            &quot;beds_count&quot;: null,
+            &quot;rooms_count&quot;: &quot;3&quot;,
+            &quot;address&quot;: &quot;Казань&quot;,
+            &quot;rules_cancellation&quot;: null,
+            &quot;description&quot;: null,
+            &quot;created_at&quot;: &quot;2024-12-09T13:32:40.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-12-09T13:32:40.000000Z&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;wifi&quot;,
+                    &quot;key&quot;: &quot;wi_fi&quot;,
+                    &quot;description&quot;: &quot;NBfdnfnv&quot;,
+                    &quot;group&quot;: &quot;internet&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null,
+                    &quot;pivot&quot;: {
+                        &quot;advertisement_id&quot;: 47,
+                        &quot;param_id&quot;: 1,
+                        &quot;value&quot;: 0
+                    }
+                },
+                {
+                    &quot;id&quot;: 2,
+                    &quot;name&quot;: &quot;wifi2&quot;,
+                    &quot;key&quot;: &quot;wi_fi2&quot;,
+                    &quot;description&quot;: &quot;NBfdnfnv2&quot;,
+                    &quot;group&quot;: &quot;internet2&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null,
+                    &quot;pivot&quot;: {
+                        &quot;advertisement_id&quot;: 47,
+                        &quot;param_id&quot;: 2,
+                        &quot;value&quot;: 1
+                    }
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 46,
+            &quot;check_in_date&quot;: null,
+            &quot;departure_date&quot;: null,
+            &quot;beds_count&quot;: null,
+            &quot;rooms_count&quot;: &quot;3&quot;,
+            &quot;address&quot;: &quot;Казань&quot;,
+            &quot;rules_cancellation&quot;: null,
+            &quot;description&quot;: null,
+            &quot;created_at&quot;: &quot;2024-12-09T13:29:21.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-12-09T13:29:21.000000Z&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;wifi&quot;,
+                    &quot;key&quot;: &quot;wi_fi&quot;,
+                    &quot;description&quot;: &quot;NBfdnfnv&quot;,
+                    &quot;group&quot;: &quot;internet&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null,
+                    &quot;pivot&quot;: {
+                        &quot;advertisement_id&quot;: 46,
+                        &quot;param_id&quot;: 1,
+                        &quot;value&quot;: 0
+                    }
+                },
+                {
+                    &quot;id&quot;: 2,
+                    &quot;name&quot;: &quot;wifi2&quot;,
+                    &quot;key&quot;: &quot;wi_fi2&quot;,
+                    &quot;description&quot;: &quot;NBfdnfnv2&quot;,
+                    &quot;group&quot;: &quot;internet2&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null,
+                    &quot;pivot&quot;: {
+                        &quot;advertisement_id&quot;: 46,
+                        &quot;param_id&quot;: 2,
+                        &quot;value&quot;: 1
+                    }
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 45,
+            &quot;check_in_date&quot;: null,
+            &quot;departure_date&quot;: null,
+            &quot;beds_count&quot;: null,
+            &quot;rooms_count&quot;: &quot;3&quot;,
+            &quot;address&quot;: &quot;Казань&quot;,
+            &quot;rules_cancellation&quot;: null,
+            &quot;description&quot;: null,
+            &quot;created_at&quot;: &quot;2024-12-09T13:28:58.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-12-09T13:28:58.000000Z&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;wifi&quot;,
+                    &quot;key&quot;: &quot;wi_fi&quot;,
+                    &quot;description&quot;: &quot;NBfdnfnv&quot;,
+                    &quot;group&quot;: &quot;internet&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null,
+                    &quot;pivot&quot;: {
+                        &quot;advertisement_id&quot;: 45,
+                        &quot;param_id&quot;: 1,
+                        &quot;value&quot;: 1
+                    }
+                },
+                {
+                    &quot;id&quot;: 2,
+                    &quot;name&quot;: &quot;wifi2&quot;,
+                    &quot;key&quot;: &quot;wi_fi2&quot;,
+                    &quot;description&quot;: &quot;NBfdnfnv2&quot;,
+                    &quot;group&quot;: &quot;internet2&quot;,
+                    &quot;created_at&quot;: null,
+                    &quot;updated_at&quot;: null,
+                    &quot;pivot&quot;: {
+                        &quot;advertisement_id&quot;: 45,
+                        &quot;param_id&quot;: 2,
+                        &quot;value&quot;: 0
+                    }
+                }
+            ]
+        }
+    ],
+    &quot;success&quot;: true
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-advertisements" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-advertisements"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-advertisements"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-advertisements" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-advertisements">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-advertisements" data-method="GET"
+      data-path="api/advertisements"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-advertisements', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/advertisements</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-advertisements"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-advertisements"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-POSTapi-advertisements">POST api/advertisements</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-advertisements">
+<blockquote>Example request:</blockquote>
+
+</span>
+
+<span id="example-responses-POSTapi-advertisements">
+</span>
+<span id="execution-results-POSTapi-advertisements" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-advertisements"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-advertisements"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-advertisements" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-advertisements">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-advertisements" data-method="POST"
+      data-path="api/advertisements"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-advertisements', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/advertisements</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-advertisements"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-advertisements"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-POSTapi-advertisements-update">POST api/advertisements/update</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-advertisements-update">
+<blockquote>Example request:</blockquote>
+
+</span>
+
+<span id="example-responses-POSTapi-advertisements-update">
+</span>
+<span id="execution-results-POSTapi-advertisements-update" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-advertisements-update"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-advertisements-update"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-advertisements-update" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-advertisements-update">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-advertisements-update" data-method="POST"
+      data-path="api/advertisements/update"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-advertisements-update', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/advertisements/update</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-advertisements-update"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-advertisements-update"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-GETapi-advertisement">GET api/advertisement</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-advertisement">
+<blockquote>Example request:</blockquote>
+
+</span>
+
+<span id="example-responses-GETapi-advertisement">
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 58
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;No query results for model [App\\Models\\Advertisement].&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-advertisement" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-advertisement"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-advertisement"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-advertisement" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-advertisement">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-advertisement" data-method="GET"
+      data-path="api/advertisement"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-advertisement', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/advertisement</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-advertisement"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-advertisement"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-POSTapi-booking">POST api/booking</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-booking">
+<blockquote>Example request:</blockquote>
+
+</span>
+
+<span id="example-responses-POSTapi-booking">
+</span>
+<span id="execution-results-POSTapi-booking" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-booking"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-booking"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-booking" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-booking">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-booking" data-method="POST"
+      data-path="api/booking"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-booking', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/booking</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-booking"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-booking"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                <h1 id="polzovatel">Пользователь</h1>
+
+    
+
+                                <h2 id="polzovatel-POSTapi-login">Логин</h2>
+
+<p>
+</p>
+
+<p>Пользователь не должен быть заблокированным</p>
+
+<span id="example-requests-POSTapi-login">
+<blockquote>Example request:</blockquote>
+
+</span>
+
+<span id="example-responses-POSTapi-login">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-login"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-login">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-login" data-method="POST"
+      data-path="api/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/login</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-login"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-login"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-login"
+               value=""
+               data-component="body">
+    <br>
+<p>Тест</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="POSTapi-login"
+               value="3G,:Cs!"
+               data-component="body">
+    <br>
+<p>Must be at least 10 characters. Example: <code>3G,:Cs!</code></p>
+        </div>
+        </form>
+
+            
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                            </div>
+            </div>
+</div>
+</body>
+</html>
