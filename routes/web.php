@@ -1,6 +1,11 @@
 <?php
 
+use App\Jobs\AssessmentRecalculated;
+use App\Models\Advertisement;
+use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use  App\Mail\AssessmentOwner;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +19,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $user = User::first();
+    $advertisement = Advertisement::first();
+    //AssessmentRecalculated::dispatch($advertisement->id);
+//    Mail::to($user)->send(new AssessmentOwner($advertisement, $user));
+
+
+//    $var1 = function ($num1) {
+//        return $num1 * $num1;
+//    };
+//    $var2 = 10;
+//    return $var1($var2);
+    $a = 1;
 });

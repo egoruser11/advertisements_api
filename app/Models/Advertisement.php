@@ -19,7 +19,7 @@ class Advertisement extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function assessements()
+    public function assessments()
     {
         return $this->hasMany(Assessment::class);
     }

@@ -4,10 +4,13 @@
 namespace App\Http\Services;
 
 use App\Exceptions\CustomException;
+use App\Http\Resources\UserResource;
 use App\Http\Services\AdvertisementReviewRatingService;
 use App\Models\Advertisement;
 use App\Models\Assessment;
 use App\Models\Reservation;
+use App\Models\RuleOfReservation;
+use App\Models\User;
 use Carbon\Carbon;
 
 
@@ -74,6 +77,26 @@ class AdvertisementService
         return $advertisements;
 
     }
+
+    public function storeFavorite(array $data, User $user): User
+    {
+        $user->favoriteAdvertisements()->syncWithoutDetaching($data['advertisement_ids']);
+        $user->load('favoriteAdvertisements');
+        return $user;
+    }
+
+    public function show(array $data)
+    {
+
+        $advertisement = Advertisement::with('params', 'condition', 'assessments', 'guests')->findOrFail($data['advertisement_id']);
+        $rulesOfReservation = RuleOfReservation::where('condition_id', $advertisement->condition->id)->get();
+        $result = [];
+        $result['advertisement'] = $advertisement;
+        $result['rulesOfReservation'] = $rulesOfReservation;
+        return $result;
+
+    }
+
 
 }
 

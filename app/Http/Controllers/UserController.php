@@ -47,7 +47,6 @@ class UserController extends BaseController
         $filePath = $file->name;
         Storage::delete($filePath);
         $file->delete();
-
         return response_success(['file' => $filePath]);
     }
 }

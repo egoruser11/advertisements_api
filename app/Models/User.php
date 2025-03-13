@@ -4,6 +4,8 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
@@ -31,19 +33,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    public function reservations()
-    {
-        return $this->hasMany(Reservation::class);
-    }
-    public function favoriteAdvertisements()
-    {
-        return $this->belongsToMany(Advertisement::class, 'favorite_advertisements');
-    }
 
-    public function photos()
-    {
-        return $this->hasMany(PhotoUser::class);
-    }
     protected $guarded = ['id'];
 
     /**
@@ -72,5 +62,19 @@ class User extends Authenticatable
         $this->secret_code = Str::lower(Str::random(User::SECRET_CODE_LENGTH));
         $this->secret_code_at = now();
         $this->save();
+    }
+
+    public function reservations(): HasMany
+    {
+        return $this->hasMany(Reservation::class);
+    }
+    public function favoriteAdvertisements(): BelongsToMany
+    {
+        return $this->belongsToMany(Advertisement::class, 'favorite_advertisements');
+    }
+
+    public function photos(): HasMany
+    {
+        return $this->hasMany(PhotoUser::class);
     }
 }

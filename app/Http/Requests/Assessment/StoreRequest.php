@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Advertisement;
+namespace App\Http\Requests\Assessment;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateAssessmentRequest extends FormRequest
+class StoreRequest extends FormRequest
 {
 
     /**
@@ -15,7 +15,7 @@ class UpdateAssessmentRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => 'required|exists:assessments,id',
+            'advertisement_id' => 'required|exists:advertisements,id',
             'review' => 'string|nullable',
             'price_quality' => 'required|numeric|between:1,5',
             'timeliness_of_the_meeting' => 'required|numeric|between:1,5',
